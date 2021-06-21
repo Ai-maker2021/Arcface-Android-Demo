@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="faceEntity"
+            type="com.arcsoft.arcfacedemo.facedb.entity.FaceEntity" />
+
+        <variable
+            name="position"
+            type="int" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/item_face_margin"
+        android:background="?android:attr/selectableItemBackground">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_head_img"
+            android:layout_width="@dimen/item_image_size"
+            android:layout_height="@dimen/item_image_size"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:layout_width="@dimen/item_image_size"
+                android:layout_height="@dimen/item_image_size"
+                android:scaleType="fitXY"
+                app:imgPath="@{faceEntity.imagePath}" />
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_image_size"
+            android:layout_marginStart="@dimen/common_margin"
+            android:layout_marginEnd="@dimen/common_margin"
+            android:layout_toEndOf="@+id/cardview_head_img"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|start"
+                android:text="@{faceEntity.userName}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_item_user_name" />
+
+            <TextView
+                android:id="@+id/tv_face_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical|start"
+                android:text="@{@string/label_face_id(faceEntity.faceId)}"
+                android:textColor="@android:color/darker_gray" />
+            <TextView
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                app:date="@{faceEntity.registerTime}"
+                android:textColor="@android:color/darker_gray" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

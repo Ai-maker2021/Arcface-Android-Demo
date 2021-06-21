@@ -1,0 +1,147 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/settings_recognize_orient">
+
+        <com.arcsoft.arcfacedemo.preference.ChooseDetectDegreeListPreference
+            app:defaultValue="@string/default_recognize_orient_priority"
+            app:entries="@array/recognize_orient_priority_desc"
+            app:entryValues="@array/recognize_orient_priority_values"
+            app:key="@string/preference_choose_detect_degree"
+            app:title="@string/title_choose_detect_degree"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/settings_preview_adapt">
+
+        <PreferenceScreen app:title="@string/title_camera_preview_adapt">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.arcsoft.arcfacedemo.ui.activity.CameraConfigureActivity"
+                android:targetPackage="com.arcsoft.arcfacedemo" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_recognize_scale"
+        app:isPreferenceVisible="false">
+
+        <ListPreference
+            app:defaultValue="16"
+            app:entries="@array/recognize_scale_values"
+            app:entryValues="@array/recognize_scale_values"
+            app:key="@string/preference_recognize_scale_value"
+            app:title="@string/title_recognize_scale_value"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_liveness">
+        <ListPreference
+            app:defaultValue="@string/value_liveness_type_rgb"
+            app:key="@string/preference_liveness_detect_type"
+            app:title="@string/title_liveness_detect_type"
+            app:useSimpleSummaryProvider="true" />
+
+        <com.arcsoft.arcfacedemo.preference.ThresholdPreference
+            app:key="@string/preference_rgb_liveness_threshold"
+            app:title="@string/title_rgb_threshold"
+            app:dialogLayout="@layout/pref_threshold_setting"
+            app:useSimpleSummaryProvider="true" />
+
+        <com.arcsoft.arcfacedemo.preference.ThresholdPreference
+            app:key="@string/preference_ir_liveness_threshold"
+            app:title="@string/title_ir_threshold"
+            app:dialogLayout="@layout/pref_threshold_setting"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/title_image_quality_detect">
+        <SwitchPreferenceCompat
+            app:key="@string/preference_enable_image_quality_detect"
+            app:summaryOff="@string/description_image_quality_detect_disabled"
+            app:summaryOn="@string/description_image_quality_detect_enabled"
+            app:defaultValue="true"
+            app:title="@string/title_image_quality_detect" />
+
+        <com.arcsoft.arcfacedemo.preference.ThresholdPreference
+            app:dependency="@string/preference_enable_image_quality_detect"
+            app:key="@string/preference_image_quality_no_mask_recognize_threshold"
+            app:title="@string/title_image_quality_no_mask_recognize_threshold"
+            app:dialogLayout="@layout/pref_threshold_setting"
+            app:useSimpleSummaryProvider="true" />
+
+        <com.arcsoft.arcfacedemo.preference.ThresholdPreference
+            app:dependency="@string/preference_enable_image_quality_detect"
+            app:key="@string/preference_image_quality_no_mask_register_threshold"
+            app:title="@string/title_image_quality_no_mask_register_threshold"
+            app:dialogLayout="@layout/pref_threshold_setting"
+            app:useSimpleSummaryProvider="true" />
+
+        <com.arcsoft.arcfacedemo.preference.ThresholdPreference
+            app:dependency="@string/preference_enable_image_quality_detect"
+            app:key="@string/preference_image_quality_mask_recognize_threshold"
+            app:title="@string/title_image_quality_mask_recognize_threshold"
+            app:dialogLayout="@layout/pref_threshold_setting"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory app:title="@string/setting_recognize">
+<!--        <ListPreference-->
+<!--            app:defaultValue="5"-->
+<!--            app:entries="@array/recognize_max_num_values"-->
+<!--            app:entryValues="@array/recognize_max_num_values"-->
+<!--            app:key="@string/preference_recognize_max_detect_num"-->
+<!--            app:title="@string/title_max_detect_face_num"-->
+<!--            app:useSimpleSummaryProvider="true" />-->
+
+
+<!--        <SwitchPreferenceCompat-->
+<!--            app:key="@string/preference_recognize_keep_max_face"-->
+<!--            app:summaryOff="@string/description_recognize_not_keep_max_face"-->
+<!--            app:summaryOn="@string/description_recognize_keep_max_face"-->
+<!--            app:title="@string/title_recognize_face_count_limit" />-->
+
+
+<!--        <SwitchPreferenceCompat-->
+<!--            app:key="@string/preference_recognize_limit_recognize_area"-->
+<!--            app:summaryOff="@string/description_recognize_no_area_limited"-->
+<!--            app:summaryOn="@string/description_recognize_area_limited"-->
+<!--            app:title="@string/title_recognize_area_limit" />-->
+
+
+        <com.arcsoft.arcfacedemo.preference.ThresholdPreference
+            app:key="@string/preference_recognize_threshold"
+            app:title="@string/title_recognize_threshold"
+            app:dialogLayout="@layout/pref_threshold_setting"
+            app:useSimpleSummaryProvider="true" />
+
+<!--        <SwitchPreferenceCompat-->
+<!--            app:key="@string/preference_enable_face_size_limit"-->
+<!--            app:summaryOff="@string/description_face_size_limit_disabled"-->
+<!--            app:summaryOn="@string/description_face_size_limit_enabled"-->
+<!--            app:title="@string/title_face_size_limit" />-->
+
+<!--        <com.arcsoft.arcfacedemo.preference.AdjustableIntegerPreference-->
+<!--            app:dependency="@string/preference_enable_face_size_limit"-->
+<!--            app:key="@string/preference_recognize_face_size_limit"-->
+<!--            app:title="@string/title_recognize_face_side_length_limit"-->
+<!--            app:useSimpleSummaryProvider="true" />-->
+
+<!--        <SwitchPreferenceCompat-->
+<!--            app:key="@string/preference_enable_face_move_limit"-->
+<!--            app:summaryOff="@string/description_face_size_move_disabled"-->
+<!--            app:summaryOn="@string/description_face_size_move_enabled"-->
+<!--            app:title="@string/title_face_move_limit" />-->
+
+<!--        <com.arcsoft.arcfacedemo.preference.AdjustableIntegerPreference-->
+<!--            app:dependency="@string/preference_enable_face_move_limit"-->
+<!--            app:key="@string/preference_recognize_move_pixel_limit"-->
+<!--            app:title="@string/title_recognize_face_move_pixel_limit"-->
+<!--            app:useSimpleSummaryProvider="true" />-->
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

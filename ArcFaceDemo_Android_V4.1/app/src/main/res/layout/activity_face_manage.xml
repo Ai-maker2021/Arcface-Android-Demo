@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.FaceManageActivity">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@{@string/tip_no_registered_face(Constants.DEFAULT_REGISTER_FACES_DIR)}"
+                android:visibility="@{(hasFace==null||hasFace)?View.INVISIBLE:View.VISIBLE}" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_face_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.arcsoft.arcfacedemo.widget.FaceCountNotificationView
+                android:visibility="@{(hasFace!=null&amp;&amp;hasFace)?View.VISIBLE:View.INVISIBLE}"
+                android:id="@+id/face_count_notification_view"
+                android:layout_width="@dimen/face_count_notification_size"
+                android:layout_height="@dimen/face_count_notification_size"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/common_margin" />
+        </FrameLayout>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:title="@string/page_face_manage" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@drawable/ic_add" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <data>
+
+        <import type="android.view.View" />
+        <import type="com.arcsoft.arcfacedemo.common.Constants" />
+
+        <variable
+            name="faceEntityList"
+            type="java.util.List&lt;com.arcsoft.arcfacedemo.facedb.entity.FaceEntity&gt;" />
+
+        <variable
+            name="hasFace"
+            type="Boolean" />
+    </data>
+</layout>

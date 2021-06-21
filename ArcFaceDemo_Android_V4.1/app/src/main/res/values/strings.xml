@@ -1,0 +1,283 @@
+<resources>
+    <string name="app_name">ArcFaceDemo</string>
+
+
+    <!--通用提示-->
+    <string name="loading">加载中…</string>
+    <string name="please_wait">请稍等…</string>
+    <string name="ok">确认</string>
+    <string name="cancel">取消</string>
+    <string name="delete">删除</string>
+    <string name="undo">撤销</string>
+    <string name="stopped">已停止</string>
+    <string name="stop">停止</string>
+    <string name="notice">提示</string>
+
+    <!--README相关-->
+    <string name="title_introduction">简介</string>
+    <string name="desc_scale_value">scale参数说明</string>
+    <string name="desc_orient">检测角度说明</string>
+    <string name="desc_detect_mode">检测模式说明</string>
+    <string name="desc_error_code">错误码说明</string>
+    <string name="desc_face_rect_comparison">人脸框绘制适说明（需先激活）</string>
+
+    <string name="original_preview_data">原始的图像数据\n（未旋转、镜像，仅缩放）</string>
+    <string name="adapted_preview_data">适配后的预览画面\n（可能经过旋转、镜像、缩放）</string>
+    <string name="rect_not_adapted_for_draw">未适配，直接使用的人脸框</string>
+    <string name="rect_adapted_for_draw">适配后被绘制的人脸框</string>
+
+
+    <!--激活相关-->
+    <string name="active_engine">激活引擎</string>
+    <string name="active_success">激活引擎成功</string>
+    <string name="already_activated">已激活</string>
+    <string name="active_key_activated">该激活码已被其他设备使用</string>
+    <string name="dont_need_active_anymore">引擎已激活，无需再次激活</string>
+    <string name="active_failed">引擎激活失败，错误码：%d， 错误码常量名：%s</string>
+    <string name="not_activated">SDK未激活</string>
+    <string name="app_id">appId</string>
+    <string name="sdk_key">sdkKey</string>
+    <string name="active_key">activeKey</string>
+    <string name="active_online">在线激活</string>
+    <string name="active_offline">离线激活</string>
+    <string name="copy_device_finger">复制指纹</string>
+    <string name="description_copy_device_finger">将设备指纹复制到剪贴板，可存储到本地文件，上传到开放平台生成离线授权文件用于离线激活</string>
+    <string name="device_info_copied">设备指纹：\n%s\n已复制</string>
+    <string name="get_device_finger_failed">获取设备指纹失败，错误码：%d</string>
+    <string name="notice_please_active_before_use">SDK未激活，请激活后使用！</string>
+    <string name="read_local_config_and_active">读取本地配置文件并激活</string>
+    <string name="notice_active_online">联网环境下，支持在线激活，可读取本地配置文件，本地配置文件路径为：/sdcard/activeConfig.txt，格式：\nAPP_ID:XXXXXXXXXXXXXXX\nSDK_KEY:XXXXXXXXXXXXXXX\nACTIVE_KEY:XXXX-XXXX-XXXX-XXXX</string>
+    <string name="notice_active_offline">无网络环境下，支持离线激活，请将设备授权文件放置在sdcard根目录下，命名为%s</string>
+    <string name="active_file_name">active_result.dat</string>
+    <string name="read_config_failed">读取本地文件失败，请检查格式</string>
+
+
+    <!--界面适配-->
+    <string name="recognize_settings">参数设置</string>
+
+    <!--动态库相关-->
+    <string name="library_not_found">未找到库文件，请检查是否有将.so文件放至工程的 app\\src\\main\\jniLibs 目录下</string>
+
+    <!--各个界面获取本地图片失败提示-->
+    <string name="get_picture_failed">获取图片失败</string>
+
+    <!--各个界面获取权限失败时的提示-->
+    <string name="permission_denied">权限被拒绝！</string>
+
+    <!--各个界面引擎初始化失败的提示-->
+    <string name="init_failed">引擎初始化失败，错误码为：%d，错误码常量名为：%s</string>
+    <string name="engine_not_initialized">引擎未初始化，错误码为 %d</string>
+
+    <!--人脸属性检测（图片） 界面-->
+    <string name="start_process">属性分析</string>
+    <string name="choose_local_image">选择本地图片</string>
+    <string name="processing">处理中</string>
+
+    <!--单目、双目识别注册界面-->
+    <string name="register">注册</string>
+    <string name="switch_camera">切换相机</string>
+    <string name="switch_camera_failed">切换相机失败</string>
+    <string name="recognize_failed_notice">未通过:%s</string>
+    <string name="recognize_success_notice">通过:%s</string>
+    <string name="low_confidence_level">人脸置信度低</string>
+    <string name="specific_engine_init_failed">%s 初始化失败，错误码：%d\n错误码常量名：%s</string>
+    <string name="notice_change_detect_degree">相机已切换，若无法检测到人脸，需要在配置界面修改视频模式人脸检测角度</string>
+    <string name="liveness_detect">活体检测</string>
+    <string name="camera_rgb">RGB CAMERA</string>
+    <string name="camera_ir">IR CAMERA</string>
+    <string name="camera_rgb_preview_size">RGB CAMERA\n%dx%d</string>
+    <string name="camera_ir_preview_size">IR CAMERA\n%dx%d</string>
+    <string name="camera_error_notice">\n可能的原因：该设备不支持同时打开两个摄像头</string>
+    <string name="draw_ir_rect_mirror_horizontal">IR人脸框水平镜像绘制</string>
+    <string name="draw_ir_rect_mirror_vertical">IR人脸框垂直镜像绘制</string>
+
+    <!--配置、功能选择界面-->
+    <string name="page_readme">简介</string>
+    <string name="page_ir_face_recognize">人脸识别</string>
+    <string name="page_liveness_detect">活体检测</string>
+    <string name="page_single_image">人脸属性</string>
+    <string name="page_face_compare">图片1:1比对</string>
+    <string name="page_face_manage">人脸管理</string>
+    <string name="page_settings">参数设置</string>
+    <string name="page_debug">异常分析</string>
+    <string name="page_calculate_data_length">计算数据长度</string>
+
+
+    <!-- 人脸管理-->
+    <string name="tip_no_registered_face">未注册人脸，请点击右下角图标进行注册，\n默认待批量注册图存放目录：%s</string>
+    <string name="please_put_photos">请将需要注册的人脸照片放在\n%s\n目录下</string>
+    <string name="label_face_id">id: %d</string>
+    <string name="dialog_title_change_name">修改名称</string>
+    <string name="name_should_not_be_empty">名称不可为空</string>
+    <string name="register_success">注册成功</string>
+    <string name="register_failed">注册失败</string>
+    <string name="face_cleared">人脸库已清空</string>
+    <string name="face_deleted">已删除</string>
+    <string name="register_select_from_album">选择照片注册</string>
+    <string name="batch_register_from_file">本地批量注册</string>
+    <string name="clear_all_faces">清空所有人脸</string>
+    <string name="registering_please_wait">注册中，请稍等</string>
+    <string name="register_progress">当前/失败/所有：%d / %d / %d</string>
+
+    <!--人脸比对1:n（图片vs图片） 界面-->
+    <string name="choose_main_image">选择注册照</string>
+    <string name="add_item_image">添加识别照</string>
+    <string name="notice_choose_main_img">请先选择注册照</string>
+    <string name="notice_register_image_no_mask">注册照要求不戴口罩</string>
+    <string name="compare_failed">比对失败，错误码为 %d</string>
+
+    <!-- 错误信息收集界面-->
+    <string name="dump_error_cannot_detect_faces">人脸检测异常</string>
+    <string name="dump_liveness_info">活体识别数据</string>
+    <string name="dump_extract_failed">特征提取异常</string>
+    <string name="dump_recognize_failed">人脸识别失败</string>
+    <string name="dump_performance_info">识别耗时数据</string>
+
+    <!-- 图像大小计算-->
+    <string name="notice_input_width">请输入图像宽度</string>
+    <string name="large_resolution_not_recommended">不推荐使用过大分辨率的图像</string>
+    <string name="width_must_be_multiple_of_4">宽度必须是4的倍数</string>
+    <string name="notice_input_height">请输入图像高度</string>
+    <string name="calculate">计算</string>
+    <string name="image_width">图像宽度</string>
+    <string name="image_height">图像高度</string>
+    <string name="threshold_value_illegal">阈值非法</string>
+    <string name="interger_value_illegal">数值非法</string>
+
+
+    <!-- 配置 -->
+
+    <string name="ft_op_0">视频模式仅检测0度</string>
+    <string name="ft_op_90">视频模式仅检测90度</string>
+    <string name="ft_op_180">视频模式仅检测180度</string>
+    <string name="ft_op_270">视频模式仅检测270度</string>
+    <string name="ft_op_all">视频模式全方向人脸检测</string>
+
+    <string name="dialog_delete_face_config">确认删除 \'%s\' 的人脸？</string>
+    <string name="label_face_manage">人脸管理</string>
+
+    <!-- 配置的小标题 -->
+    <string name="settings_preview_adapt">相机预览设置</string>
+    <string name="settings_recognize_orient">识别角度设置</string>
+    <string name="settings_liveness">活体检测设置</string>
+    <string name="setting_recognize">识别设置</string>
+    <string name="face_attr_setting_threshold_recognize">人脸属性阈值设置</string>
+    <string name="settings_recognize_scale">人脸检测大小设置</string>
+    <string name="title_image_quality_detect">图像质量检测设置</string>
+    <string name="title_face_size_limit">识别时人脸大小限制</string>
+    <string name="title_face_move_limit">识别时人脸移动限制</string>
+    <string name="title_camera_preview_adapt">相机分辨率、角度等适配</string>
+
+    <!-- 配置的key-->
+    <string name="preference_switch_camera">switch_camera</string>
+    <string name="preference_dual_camera_offset_horizontal">dual_camera_offset_horizontal</string>
+    <string name="preference_dual_camera_offset_vertical">dual_camera_offset_vertical</string>
+    <string name="preference_draw_rgb_rect_horizontal_mirror">draw_rgb_rect_horizontal_mirror</string>
+    <string name="preference_draw_rgb_rect_vertical_mirror">draw_rgb_rect_vertical_mirror</string>
+    <string name="preference_draw_ir_rect_horizontal_mirror">draw_ir_rect_horizontal_mirror</string>
+    <string name="preference_draw_ir_rect_vertical_mirror">draw_ir_rect_vertical_mirror</string>
+    <string name="preference_rgb_preview_horizontal_mirror">rgb_preview_horizontal_mirror</string>
+    <string name="preference_ir_preview_horizontal_mirror">ir_preview_horizontal_mirror</string>
+    <string name="preference_rgb_camera_rotation">rgb_camera_rotation</string>
+    <string name="preference_ir_camera_rotation">ir_camera_rotation</string>
+    <string name="preference_liveness_detect_type">liveness_detect_type</string>
+    <string name="preference_rgb_liveness_detect">rgb_liveness_detect</string>
+    <string name="preference_ir_liveness_detect">ir_liveness_detect</string>
+    <string name="preference_recognize_keep_max_face">keep_max_face</string>
+    <string name="preference_recognize_limit_recognize_area">limit_recognize_area</string>
+    <string name="preference_recognize_max_detect_num">max_detect_num</string>
+    <string name="preference_recognize_scale_value">scale_value</string>
+    <string name="preference_choose_detect_degree">choose_detect_degree</string>
+    <string name="preference_track_face_count">track_face_count</string>
+    <string name="preference_recognize_threshold">recognize_threshold</string>
+    <string name="preference_shelter_threshold">shelter_threshold</string>
+    <string name="preference_eye_open_threshold">eye_open_threshold</string>
+    <string name="preference_mouth_close_threshold">mouth_close_threshold</string>
+    <string name="preference_wear_glasses_threshold">wear_glasses_threshold</string>
+    <string name="preference_recognize_face_size_limit">recognize_face_size_limit</string>
+    <string name="preference_recognize_move_pixel_limit">recognize_move_pixel_limit</string>
+    <string name="preference_rgb_liveness_threshold">rgb_liveness_threshold</string>
+    <string name="preference_ir_liveness_threshold">ir_liveness_threshold</string>
+    <string name="preference_liveness_fq_threshold">liveness_fq_threshold</string>
+    <string name="preference_rgb_liveness_face_size_threshold">rgb_liveness_face_size_threshold</string>
+    <string name="preference_ir_liveness_face_size_threshold">ir_liveness_face_size_threshold</string>
+    <string name="preference_dual_camera_preview_size">dual_camera_preview_size</string>
+    <string name="preference_app_id">app_id</string>
+    <string name="preference_sdk_key">sdk_key</string>
+    <string name="preference_active_key">active_key</string>
+    <string name="preference_enable_image_quality_detect">enable_image_quality_detect</string>
+    <string name="preference_enable_face_size_limit">enable_face_size_limit</string>
+    <string name="preference_enable_face_move_limit">enable_face_move_limit</string>
+    <string name="preference_image_quality_no_mask_recognize_threshold">image_quality_no_mask_recognize_threshold</string>
+    <string name="preference_image_quality_no_mask_register_threshold">image_quality_no_mask_register_threshold</string>
+    <string name="preference_image_quality_mask_recognize_threshold">image_quality_mask_recognize_threshold</string>
+
+    <!-- 识别相关的配置项-->
+    <string name="title_choose_detect_degree">选择视频模式检测角度</string>
+    <string name="title_liveness_detect_type">活体检测模式</string>
+    <string name="title_rgb_threshold">可见光活体检测阈值</string>
+    <string name="title_ir_threshold">红外活体检测阈值</string>
+    <string name="title_liveness_fq_threshold">活体中图像质量检测阈值</string>
+    <string name="title_rgb_liveness_face_size">可见光活体中模型选择界限</string>
+    <string name="title_ir_liveness_face_size">红外活体中模型选择界限</string>
+    <string name="title_recognize_face_count_limit">同屏识别人脸数限制</string>
+    <string name="title_max_detect_face_num">识别界面最大人脸检测数量</string>
+    <string name="title_recognize_scale_value">识别时的最小人脸占比（图像长边 / 人脸宽度）</string>
+    <string name="title_recognize_area_limit">识别区域限制</string>
+    <string name="title_recognize_threshold">识别阈值</string>
+    <string name="title_recognize_face_side_length_limit">人脸大小限制(px)</string>
+    <string name="title_recognize_face_move_pixel_limit">人脸上下帧移动像素数限制</string>
+    <string name="title_shelter_threshold">遮挡阈值</string>
+    <string name="title_eye_open_threshold">眼睛开启阈值</string>
+    <string name="title_mouth_close_threshold">嘴巴闭合阈值</string>
+    <string name="title_wear_glasses_threshold">戴眼镜阈值</string>
+    <!-- 相机适配相关的配置项-->
+    <string name="title_rgb_preview_additional_rotation">可见光预览额外旋转角度</string>
+    <string name="title_ir_preview_additional_rotation">红外预览额外旋转角度</string>
+    <string name="title_draw_rect_adaptation">人脸框绘制适配</string>
+    <string name="title_dual_camera_data_offset">双目偏移（基于图像，而非View）</string>
+    <string name="title_dual_camera_data_offset_horizontal">双目水平偏移像素</string>
+    <string name="title_dual_camera_data_offset_vertical">双目垂直偏移像素</string>
+    <string name="title_camera_preview_adaption">相机预览适配</string>
+    <string name="title_mirror_draw_rgb_rect_horizontal">水平镜像绘制可见光人脸框</string>
+    <string name="title_mirror_draw_rgb_rect_vertical">垂直镜像绘制可见光人脸框</string>
+    <string name="title_mirror_draw_ir_rect_horizontal">水平镜像绘制红外人脸框</string>
+    <string name="title_mirror_draw_ir_rect_vertical">垂直镜像绘制红外人脸框</string>
+    <string name="title_rgb_preview_horizontal_mirror">可见光数据预览</string>
+    <string name="title_ir_preview_horizontal_mirror">红外数据预览</string>
+    <string name="title_switch_camera">切换相机</string>
+    <string name="title_dual_camera_preview_size">双目分辨率</string>
+    <string name="title_image_quality_no_mask_recognize_threshold">图像质量阈值：不戴口罩，人脸识别场景</string>
+    <string name="title_image_quality_no_mask_register_threshold">图像质量阈值：不戴口罩，人脸注册场景</string>
+    <string name="title_image_quality_mask_recognize_threshold">图像质量阈值：戴口罩，人脸识别场景</string>
+
+
+    <string name="description_recognize_keep_max_face">仅识别最大的人脸</string>
+    <string name="description_recognize_not_keep_max_face">同时识别多个人脸</string>
+    <string name="description_recognize_no_area_limited">不限制识别区域</string>
+    <string name="description_recognize_area_limited">限制识别区域</string>
+    <string name="description_draw_mirror">镜像绘制</string>
+    <string name="description_draw_origin">原始绘制</string>
+    <string name="description_camera_0_ir_1_rgb">0:IR, 1:RGB</string>
+    <string name="description_camera_0_rgb_1_ir">0:RGB, 1:IR</string>
+    <string name="description_image_quality_detect_enabled">启用图像质量检测</string>
+    <string name="description_image_quality_detect_disabled">不启用图像质量检测</string>
+    <string name="description_face_size_limit_enabled">启用人脸尺寸限制</string>
+    <string name="description_face_size_limit_disabled">不启用人脸尺寸限制</string>
+    <string name="description_face_size_move_enabled">启用人脸移动限制</string>
+    <string name="description_face_size_move_disabled">不启用人脸移动限制</string>
+
+    <!-- 配置的VALUE -->
+    <string name="value_liveness_type_rgb">rgb_liveness</string>
+    <string name="value_liveness_type_ir">ir_liveness</string>
+    <string name="value_liveness_type_disable">disable_liveness</string>
+
+    <!-- 活体配置 -->
+    <string name="description_rgb_liveness_detect">单目活体检测</string>
+    <string name="description_ir_liveness_detect">双目活体检测</string>
+    <string name="description_disable_liveness_detect">不启用活体检测</string>
+
+    <!-- 默认项-->
+    <string name="default_recognize_orient_priority">ASF_OP_ALL_OUT</string>
+
+</resources>

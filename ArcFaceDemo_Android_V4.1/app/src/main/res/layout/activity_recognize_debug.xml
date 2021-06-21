@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/dual_camera_ll_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+
+
+            <TextureView
+                android:id="@+id/dual_camera_texture_preview_rgb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.arcsoft.arcfacedemo.widget.FaceRectView
+                android:id="@+id/dual_camera_face_rect_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@+id/fl_recognize_ir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+
+                <TextureView
+                    android:id="@+id/dual_camera_texture_preview_ir"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.arcsoft.arcfacedemo.widget.FaceRectView
+                    android:id="@+id/dual_camera_face_rect_view_ir"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/common_margin"
+            android:background="@color/color_white_shadow"
+            android:orientation="vertical">
+
+            <Switch
+                android:id="@+id/switch_face_track"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_margin"
+                android:text="@string/dump_error_cannot_detect_faces" />
+
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_margin"
+                android:checked="@={errorDumpConfig.dumpLivenessDetectResult}"
+                android:text="@string/dump_liveness_info" />
+
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_margin"
+                android:checked="@={errorDumpConfig.dumpExtractError}"
+                android:text="@string/dump_extract_failed" />
+
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_margin"
+                android:checked="@={errorDumpConfig.dumpCompareFailedError}"
+                android:text="@string/dump_recognize_failed" />
+
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_margin"
+                android:checked="@={errorDumpConfig.dumpPerformanceInfo}"
+                android:text="@string/dump_performance_info" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="setting"
+                android:text="@string/recognize_settings" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@color/color_black_shadow"
+            android:maxWidth="@dimen/max_notice_width"
+            android:text="@{notice}"
+            android:textColor="@android:color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dual_camera_recycler_view_person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:compareResultList="@{compareResultList}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/color_black_shadow"
+            android:text="@{recognizeNotice}"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:visibility="@{(recognizeNotice == null || recognizeNotice.length() == 0)?View.GONE:View.VISIBLE}" />
+    </FrameLayout>
+
+    <data>
+
+        <variable
+            name="compareResultList"
+            type="java.util.List&lt;com.arcsoft.arcfacedemo.ui.model.CompareResult&gt;" />
+
+        <variable
+            name="errorDumpConfig"
+            type="com.arcsoft.arcfacedemo.util.debug.DumpConfig" />
+
+        <variable
+            name="notice"
+            type="String" />
+
+        <variable
+            name="recognizeNotice"
+            type="String" />
+
+        <import type="android.view.View" />
+    </data>
+</layout>

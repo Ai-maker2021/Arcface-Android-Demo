@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/dual_camera_ll_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+
+            <TextureView
+                android:id="@+id/dual_camera_texture_preview_rgb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.arcsoft.arcfacedemo.widget.FaceRectView
+                android:id="@+id/dual_camera_face_rect_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@+id/fl_recognize_ir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+
+                <TextureView
+                    android:id="@+id/dual_camera_texture_preview_ir"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.arcsoft.arcfacedemo.widget.FaceRectView
+                    android:id="@+id/dual_camera_face_rect_view_ir"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/common_margin"
+            android:onClick="setting"
+            android:text="@string/recognize_settings" />
+
+    </FrameLayout>
+</layout>
